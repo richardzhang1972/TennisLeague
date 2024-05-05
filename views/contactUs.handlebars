@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+  <div class="col-sm-6">
+    <h4 class="text-center my-5">Contact Us</h4>
+    <form action="/contactUs" method="POST">
+      <div class="mb-3">
+        <label for="fullname" class="form-label">Your name</label>
+        <input type="text" name="fullname" class="form-control" id="fullname"
+          value="{{user.firstname}} {{user.lastname}}">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Your email address</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="{{user.email}}"
+          aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" rows="6" name="message" id="message" class="form-control"
+          placeholder="How can we help you today?" required></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+  </div>
+  </div>
+
+  

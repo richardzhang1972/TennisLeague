@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="text-center mt-3">Signup</h4>
+                <form action="/signup" method="POST">
+
+                    <div class="mb-3">
+                        <label for="firstname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="firstname" id="firstname" value="{{firstname}}"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="lastname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname" value="{{lastname}}"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" id="email"
+                            style="text-transform: lowercase;" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phonenumber" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" name="phonenumber" id="phonenumber"
+                            value="{{phonenumber}}" required>
+                    </div>
+
+                    <div class="input-group mb-3 px-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Gender</span>
+                        </div>
+                        <select name="gender" id="gender" class="form-control" required>
+                            <option value="Select" selected disabled>Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" minlength="5"
+                            required>
+                    </div>
+                    {{#if error}}
+                    <div class="alert alert-danger">
+                        {{error}}
+                    </div>
+                    {{/if}}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Signup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        const gender = document.getElementById('gender').options;
+        for (i = 0; i < gender.length; i++) {
+            if (gender[i].value === "{{gender}}") { gender[i].selected = true; }
+        }
+    }
+</script>

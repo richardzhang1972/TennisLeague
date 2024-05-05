@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="text-center mt-3">Profile</h4>
+                {{#if isMe}}
+                <div class="text-center mt-3">
+                    <a href="/profileEdit" class="btn btn-outline-primary py-0">Edit Profile</a>
+                </div>
+                {{/if}}
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled">
+                            <li class="my-2">
+                                <span class="h6">Name:</span>
+                                <span class="mx-3">{{user.firstname}} {{user.lastname}}</span>
+                            </li>
+                            <li class="my-2">
+                                <span class="h6">Email:</span>
+                                <span class="mx-3">{{user.email}}</span>
+                            </li>
+                            <li class="my-2">
+                                <span class="h6">Phone Number:</span>
+                                <span class="mx-3">{{Age user.phonenumber}}</span>
+                            </li>
+                            <li class="my-2">
+                                <span class="h6">City and State:</span>
+                                <span class="mx-3">{{ser.cityState}}</span>
+                            </li>
+
+                            <li class="my-2">
+                                <span class="h6">Gender:</span>
+                                <span class="mx-3">{{user.Gender}}</span>
+                            </li>
+                            <li class="my-2">
+                                <span class="h6">About Me:</span>
+                                <span class="mx-3">{{user.aboutme}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#username").on('change', function () {
+            console.log("test");
+        });
+        $('#birthday').datepicker();
+
+    });
+
+</script>
